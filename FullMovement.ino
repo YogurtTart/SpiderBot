@@ -42,14 +42,17 @@ void loop() {
 
   //Sitting Function
   Serial.println("Sit");
-  //sit();
+  sit();
   delay(2000);
 
   //Wave Function
+  Serial.println("Wave");
+  wave();
+  delay(2000);
 
   //Stand Function
   Serial.println("Stand");
-  //stand();
+  stand();
   delay(2000);
   
 }
@@ -69,11 +72,13 @@ void sit(){
   Elbows(140, 40, 40, 140);// 8 , 11 , 2 ,5 
   delay(1000); // Pause for 4 seconds after elbow movements
 
+/* Extra feature
   for(int i = 0; i <3; i++){
   Hands(140, 140, 50, 50);// 3, 12, 6, 9
   delay(500); // Pause for 4 seconds after elbow movements
   Hands(70, 70, 110, 110);// 3, 12, 6, 9
   }
+*/
 
 }
 
@@ -84,6 +89,25 @@ void stand() {
   
 }
 
+void wave() {
+
+Elbows(140, 40, 20, 140);// 8 , 11 , 2 ,5 
+delay(1000); // Pause for 2 seconds after elbow movements
+Hands(150, 70, 110, 110);// 3, 12, 6, 9 
+
+for(int i = 0; i <3; i++){
+  Shoulder(155, 135, 45, 45);// 4, 13, 10, 7
+  delay(200); // Pause for 4 seconds after elbow movements
+  Shoulder(135, 135, 45, 45);// 4, 13, 10, 7
+  }
+
+  delay(200); // Pause for 4 seconds after elbow movements
+  Hands(70, 70, 110, 110);// 3, 12, 6, 9
+  delay(200); // Pause for 4 seconds after elbow movements
+  Elbows(140, 40, 40, 140);// 8 , 11 , 2 ,5 
+
+}
+
 void forward(){
 
 Shoulder(120, 125, 60, 55);// 4, 13, 10, 7
@@ -92,7 +116,7 @@ delay(500);
 Elbows(110, 70, 70, 110); // 8 , 11 , 2 ,5 
 
 
-for(int i = 0; i <4; i++){
+for(int i = 0; i <1; i++){
 
 //top right leg
 Elbows(110, 70, 60, 110); // 8 , 11 , 2 ,5 
@@ -192,91 +216,3 @@ void Hands(int A, int B, int C ,int D){
 
 
 
-/* Test 1
-void forward(){
-
-Shoulder(135, 135, 45, 45);// 4, 13, 10, 7
-delay(500); 
-
-
-for(int i = 0; i <4; i++){
-
-//btm right leg
-
-Elbows(130, 80, 80, 100); // 8 , 11 , 2 ,5 
-delay(500); 
-Shoulder(135, 135, 45, 100);// 4, 13, 10, 7
-delay(500);
-Elbows(110, 70, 70, 110); // 8 , 11 , 2 ,5  
-delay(500); 
-
-//btm left leg
-Elbows(100, 80, 60, 100); // 8 , 11 , 2 ,5  
-delay(500); 
-Shoulder(135, 80, 45, 100);// 4, 13, 10, 7
-delay(500);
-Elbows(110, 70, 70, 110); // 8 , 11 , 2 ,5  
-delay(500); 
-
-
-//Move all forward
-Shoulder(100, 135, 80, 45);// 4, 13, 10, 7
-delay(500);
-
-//top right leg
-Elbows(100, 60, 80, 100); // 8 , 11 , 2 ,5
-delay(500);
-Shoulder(135, 135, 80, 45);// 4, 13, 10, 7
-delay(500);
-Elbows(110, 70, 70, 110); // 8 , 11 , 2 ,5 
-delay(500);
-
-//top left leg
-Elbows(100, 80, 80, 120); // 8 , 11 , 2 ,5 
-delay(500);
-Shoulder(135, 135, 45, 45);// 4, 13, 10, 7
-delay(500);
-Elbows(110, 70, 70, 110); // 8 , 11 , 2 ,5 
-delay(500);
-
-}
-
-}
-*/
-
-
-
-/* test 2
-void forward(){
-
-Shoulder(135, 135, 45, 45);// 4, 13, 10, 7 initial
-delay(500); 
-
-for(int i = 0; i <4; i++){
-
-  //btm right leg
-Elbows(90, 90, 90, 110); // 8 , 11 , 2 ,5 
-delay(500); 
-Shoulder(135, 135, 45, 75);// 4, 13, 10, 7 
-delay(500);
-Elbows(90, 90, 90, 90); // 8 , 11 , 2 ,5  
-delay(500); 
-
-  //btm left leg
-Elbows(90, 70, 90, 90); // 8 , 11 , 2 ,5 
-delay(500); 
-Shoulder(135, 105, 45, 75);// 4, 13, 10, 7 
-delay(500);
-Elbows(90, 90, 90, 90); // 8 , 11 , 2 ,5  
-delay(500); 
-
-
-Shoulder(135, 135, 45, 45);// 4, 13, 10, 7 back shoulder front
-delay(500); 
-
-
-
-}
-
-}
-*/
